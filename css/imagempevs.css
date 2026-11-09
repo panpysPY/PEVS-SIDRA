@@ -1,0 +1,14 @@
+@import url("/assets/fontes/fontes.css");
+@import url("/assets/variaveis/cores.css");
+
+
+body{
+    background-color: rgb(250, 250, 250);
+}
+
+
+.principal .pevsrepresentacao{
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+}

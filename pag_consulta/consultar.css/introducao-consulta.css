@@ -1,0 +1,35 @@
+.divisao{
+    height: 6px;
+    display: block;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--azul-claro),
+        var(--laranja)
+    );
+}
+
+.introducao-consulta {
+    max-width: 900px;
+    margin: 30px auto 20px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.introducao-consulta h2 {
+    color: var(--azul-escuro);
+    font-size: 28px;
+    font-weight: 700;
+    font-family: var(--titulo1);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.introducao-consulta p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-family: var(--texto);
+    color: var(--cinza-escuro);
+    font-size: 18px;
+    line-height: 1.6;
+}

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta PEVS</title>
+
+    <link rel="stylesheet" href="consultar.css/main.css">
+
+</head>
+<!-- estrutura básica de toda página -->
+
+<header class="cabecalho">
+    <img src="/assets/imagens/caatinga.jpg" alt="Silvicultura">
+
+    <div class="texto-cabecalho">
+        <h1>Consulte as tabelas PEVS</h1>
+
+        <p>
+            Bem-vindo à página de consulta das tabelas da PEVS.
+            <br> Aqui você pode selecionar a tabela desejada e aplicar filtros para visualizar os dados específicos que procura relacionados a extrativismo
+            vegetal e silvicultura.
+        </p>
+
+    </div>
+</header>
+<!-- introdução -->
+
+<section class="divisao"></section>
+<!-- linha bonitinha para dividir as parada -->
+
+<section class="introducao-consulta">
+    <h2>Selecione uma tabela para começar</h2>
+
+    <p>
+        Escolha abaixo a tabela que deseja consultar. Os filtros correspondentes
+        serão exibidos de acordo com a tabela selecionada.
+    </p>
+</section>
+<!-- textinho-->
+
+<section class="consulta-tabelas">
+
+<div class="tabelas-opcoes">
+
+    <div class="tabela-opcao ativa" data-tabela="1">
+
+        <div class="sobre-card-topo">
+            <div class="sobre-icone">
+                <span class="material-symbols-outlined">eco</span>
+            </div>
+
+            <span class="numero-tabela tabela-verde">
+                TABELA - EXTRATIVISMO
+            </span>
+        </div>
+
+        <h3>Extrativismo vegetal</h3>
+
+        <p class="descricao-tabela">
+            Quantidade produzida e valor da produção na extração
+            vegetal, por tipo de produto extrativo.
+        </p>
+
+        <div class="linha-divisoria"></div>
+
+        <div class="dados-tabela">
+
+            <div class="dado">
+                <span class="material-symbols-outlined">calendar_month</span>
+
+                <div>
+                    <span class="dado-titulo">PERÍODO</span>
+                    <p>1986 a 2025</p>
+                </div>
+            </div>
+
+            <div class="dado">
+                <span class="material-symbols-outlined">location_on</span>
+
+                <div>
+                    <span class="dado-titulo">TERRITÓRIO</span>
+                    <p>BR, GR, UF, ME, MI, MU</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="tabela-opcao" data-tabela="2">
+
+        <div class="sobre-card-topo">
+            <div class="sobre-icone">
+                <span class="material-symbols-outlined">forest</span>
+            </div>
+
+            <span class="numero-tabela tabela-roxo">
+                TABELA - SILVICULTURA
+            </span>
+        </div>
+
+        <h3>Silvicultura</h3>
+
+        <p class="descricao-tabela">
+            Quantidade produzida e valor da produção na silvicultura,
+            por tipo de produto da silvicultura.
+        </p>
+
+        <div class="linha-divisoria"></div>
+
+        <div class="dados-tabela">
+
+            <div class="dado">
+                <span class="material-symbols-outlined">calendar_month</span>
+
+                <div>
+                    <span class="dado-titulo">PERÍODO</span>
+                    <p>1986 a 2025</p>
+                </div>
+            </div>
+
+            <div class="dado">
+                <span class="material-symbols-outlined">location_on</span>
+
+                <div>
+                    <span class="dado-titulo">TERRITÓRIO</span>
+                    <p>BR, GR, UF, ME, MI, MU</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="tabela-opcao" data-tabela="3">
+
+        <div class="sobre-card-topo">
+            <div class="sobre-icone">
+                <span class="material-symbols-outlined">bar_chart</span>
+            </div>
+
+            <span class="numero-tabela tabela-azul">
+                TABELA - SILVICULTURA
+            </span>
+        </div>
+
+        <h3>Área de silvicultura</h3>
+
+        <p class="descricao-tabela">
+            Área total existente em 31/12 dos efetivos da silvicultura,
+            por espécie florestal.
+        </p>
+
+        <div class="linha-divisoria"></div>
+
+        <div class="dados-tabela">
+
+            <div class="dado">
+                <span class="material-symbols-outlined">calendar_month</span>
+
+                <div>
+                    <span class="dado-titulo">PERÍODO</span>
+                    <p>2013 a 2025</p>
+                </div>
+            </div>
+
+            <div class="dado">
+                <span class="material-symbols-outlined">location_on</span>
+
+                <div>
+                    <span class="dado-titulo">TERRITÓRIO</span>
+                    <p>BR, GR, UF, ME, MI, MU</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ÁREA ONDE OS FILTROS APARECEM -->
+
+    <div class="area-filtros">
+
+        <div class="filtros tabela-filtros ativa" id="filtros-tabela-1">
+
+            <h2>Filtros — Extrativismo vegetal</h2>
+
+            <label for="produto">Produto</label>
+            <select id="produto" name="produto">
+                    <option value="">Selecione o produto</option>
+
+                    <option value="1">1 - Alimentícios</option>
+                    <option value="1.1">1.1 - Açaí (fruto)</option>
+                    <option value="1.2">1.2 - Baru ou Cumaru (amêndoa)</option>
+                    <option value="1.3">1.3 - Buriti (fruto)</option>
+                    <option value="1.4">1.4 - Cajá (fruto)</option>
+                    <option value="1.5">1.5 - Castanha-de-caju</option>
+                    <option value="1.6">1.6 - Castanha-do-pará</option>
+                    <option value="1.7">1.7 - Cupuaçu (fruto)</option>
+                    <option value="1.8">1.8 - Erva-mate</option>
+                    <option value="1.9">1.9 - Juçara (fruto)</option>
+                    <option value="1.10">1.10 - Macaúba (fruto)</option>
+                    <option value="1.11">1.11 - Mangaba (fruto)</option>
+                    <option value="1.12">1.12 - Palmito</option>
+                    <option value="1.13">1.13 - Pequi (fruto)</option>
+                    <option value="1.14">1.14 - Pinhão</option>
+                    <option value="1.15">1.15 - Pupunha (fruto)</option>
+                    <option value="1.16">1.16 - Tucumã ou Tucum (fruto)</option>
+                    <option value="1.17">1.17 - Umbu (fruto)</option>
+                    <option value="1.18">1.18 - Outros</option>
+
+                    <option value="2">2 - Aromáticos, medicinais, tóxicos e corantes</option>
+                    <option value="2.1">2.1 - Ipecacuanha ou poaia (raiz)</option>
+                    <option value="2.2">2.2 - Jaborandi (folha)</option>
+                    <option value="2.3">2.3 - Urucum (semente)</option>
+                    <option value="2.4">2.4 - Outros</option>
+
+                    <option value="3">3 - Borrachas</option>
+                    <option value="3.1">3.1 - Caucho</option>
+                    <option value="3.2">3.2 - Hevea (látex coagulado)</option>
+                    <option value="3.3">3.3 - Hevea (látex líquido)</option>
+                    <option value="3.4">3.4 - Mangabeira</option>
+
+                    <option value="4">4 - Ceras</option>
+                    <option value="4.1">4.1 - Carnaúba (cera)</option>
+                    <option value="4.2">4.2 - Carnaúba (pó)</option>
+                    <option value="4.3">4.3 - Outras</option>
+
+                    <option value="5">5 - Fibras</option>
+                    <option value="5.1">5.1 - Buriti</option>
+                    <option value="5.2">5.2 - Carnaúba</option>
+                    <option value="5.3">5.3 - Piaçava</option>
+                    <option value="5.4">5.4 - Outras</option>
+
+                    <option value="6">6 - Gomas não elásticas</option>
+                    <option value="6.1">6.1 - Balata</option>
+                    <option value="6.2">6.2 - Maçaranduba</option>
+                    <option value="6.3">6.3 - Sorva</option>
+
+                    <option value="7.1">7.1 - Carvão vegetal</option>
+                    <option value="7.2">7.2 - Lenha</option>
+                    <option value="7.3">7.3 - Madeira em tora</option>
+
+                    <option value="8">8 - Oleaginosos</option>
+                    <option value="8.1">8.1 - Andiroba (amêndoa)</option>
+                    <option value="8.2">8.2 - Babaçu (amêndoa)</option>
+                    <option value="8.3">8.3 - Copaíba (óleo)</option>
+                    <option value="8.4">8.4 - Cumaru (amêndoa)</option>
+                    <option value="8.5">8.5 - Licuri (coquilho)</option>
+                    <option value="8.6">8.6 - Murumuru</option>
+                    <option value="8.7">8.7 - Oiticica (semente)</option>
+                    <option value="8.8">8.8 - Pequi (amêndoa)</option>
+                    <option value="8.9">8.9 - Tucum (amêndoa)</option>
+                    <option value="8.10">8.10 - Outros</option>
+
+                    <option value="9.1">9.1 - Pinheiro brasileiro (nó de pinho)</option>
+                    <option value="9.2">9.2 - Pinheiro brasileiro (árvores abatidas)</option>
+                    <option value="9.3">9.3 - Pinheiro brasileiro (madeira em tora)</option>
+
+                    <option value="10">10 - Tanantes</option>
+                    <option value="10.1">10.1 - Angico (casca)</option>
+                    <option value="10.2">10.2 - Barbatimão (casca)</option>
+                    <option value="10.3">10.3 - Outros</option>
+            </select>
+
+            <label>Ano</label>
+            <select>
+                <option>Selecione o ano</option>
+                <option>Todos os anos</option>
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+                <option>2015</option>
+                <option>2014</option>
+                <option>2013</option>
+                <option>2012</option>
+                <option>2011</option>
+                <option>2010</option>
+                <option>2009</option>
+                <option>2008</option>
+                <option>2007</option>
+                <option>2006</option>
+                <option>2005</option>
+                <option>2004</option>
+                <option>2003</option>
+                <option>2002</option>
+                <option>2001</option>
+                <option>2000</option>
+                <option>1999</option>
+                <option>1998</option>
+                <option>1997</option>
+                <option>1996</option>
+                <option>1995</option>
+                <option>1994</option>
+                <option>1993</option>
+                <option>1992</option>
+                <option>1991</option>
+                <option>1990</option>
+                <option>1989</option>
+                <option>1988</option>
+                <option>1987</option>
+                <option>1986</option>
+            </select>
+
+            <label for="territorio">Nível territorial</label>
+            <select id="territorio" name="territorio">
+                <option value="">Selecione o nível territorial</option>
+                <option value="BR">Brasil (BR)</option>
+                <option value="GR">Grande Região (GR)</option>
+                <option value="UF">Unidade da Federação (UF)</option>
+                <option value="ME">Mesorregião Geográfica (ME)</option>
+                <option value="MI">Microrregião Geográfica (MI)</option>
+                <option value="MU">Município (MU)</option>
+            </select>
+
+            <label for="variavel">Variável</label>
+            <select id="variavel" name="variavel">
+                <option value="">Selecione a variável</option>
+
+                <option value="quantidade">
+                    Quantidade produzida na extração vegetal
+                </option>
+
+                <option value="valor">
+                    Valor da produção na extração vegetal
+                </option>
+            </select>
+
+            <button class="botao-consultar">Consultar</button>
+
+        </div>
+        <!-- FILTROS DA TABELA 1 -->
+
+
+        <!-- FILTROS DA TABELA 2 -->
+        <div class="filtros tabela-filtros" id="filtros-tabela-2">
+
+            <h2>Filtros — Silvicultura</h2>
+
+
+            <label for="produto">Produto</label>
+            <select id="produto" name="produto">
+                    <option value="">Selecione o produto</option>
+
+                    <option value="1">1 - Alimentícios</option>
+                    <option value="1.1">1.1 - Açaí (fruto)</option>
+                    <option value="1.2">1.2 - Baru ou Cumaru (amêndoa)</option>
+                    <option value="1.3">1.3 - Buriti (fruto)</option>
+                    <option value="1.4">1.4 - Cajá (fruto)</option>
+                    <option value="1.5">1.5 - Castanha-de-caju</option>
+                    <option value="1.6">1.6 - Castanha-do-pará</option>
+                    <option value="1.7">1.7 - Cupuaçu (fruto)</option>
+                    <option value="1.8">1.8 - Erva-mate</option>
+                    <option value="1.9">1.9 - Juçara (fruto)</option>
+                    <option value="1.10">1.10 - Macaúba (fruto)</option>
+                    <option value="1.11">1.11 - Mangaba (fruto)</option>
+                    <option value="1.12">1.12 - Palmito</option>
+                    <option value="1.13">1.13 - Pequi (fruto)</option>
+                    <option value="1.14">1.14 - Pinhão</option>
+                    <option value="1.15">1.15 - Pupunha (fruto)</option>
+                    <option value="1.16">1.16 - Tucumã ou Tucum (fruto)</option>
+                    <option value="1.17">1.17 - Umbu (fruto)</option>
+                    <option value="1.18">1.18 - Outros</option>
+
+                    <option value="2">2 - Aromáticos, medicinais, tóxicos e corantes</option>
+                    <option value="2.1">2.1 - Ipecacuanha ou poaia (raiz)</option>
+                    <option value="2.2">2.2 - Jaborandi (folha)</option>
+                    <option value="2.3">2.3 - Urucum (semente)</option>
+                    <option value="2.4">2.4 - Outros</option>
+
+                    <option value="3">3 - Borrachas</option>
+                    <option value="3.1">3.1 - Caucho</option>
+                    <option value="3.2">3.2 - Hevea (látex coagulado)</option>
+                    <option value="3.3">3.3 - Hevea (látex líquido)</option>
+                    <option value="3.4">3.4 - Mangabeira</option>
+
+                    <option value="4">4 - Ceras</option>
+                    <option value="4.1">4.1 - Carnaúba (cera)</option>
+                    <option value="4.2">4.2 - Carnaúba (pó)</option>
+                    <option value="4.3">4.3 - Outras</option>
+
+                    <option value="5">5 - Fibras</option>
+                    <option value="5.1">5.1 - Buriti</option>
+                    <option value="5.2">5.2 - Carnaúba</option>
+                    <option value="5.3">5.3 - Piaçava</option>
+                    <option value="5.4">5.4 - Outras</option>
+
+                    <option value="6">6 - Gomas não elásticas</option>
+                    <option value="6.1">6.1 - Balata</option>
+                    <option value="6.2">6.2 - Maçaranduba</option>
+                    <option value="6.3">6.3 - Sorva</option>
+
+                    <option value="7.1">7.1 - Carvão vegetal</option>
+                    <option value="7.2">7.2 - Lenha</option>
+                    <option value="7.3">7.3 - Madeira em tora</option>
+
+                    <option value="8">8 - Oleaginosos</option>
+                    <option value="8.1">8.1 - Andiroba (amêndoa)</option>
+                    <option value="8.2">8.2 - Babaçu (amêndoa)</option>
+                    <option value="8.3">8.3 - Copaíba (óleo)</option>
+                    <option value="8.4">8.4 - Cumaru (amêndoa)</option>
+                    <option value="8.5">8.5 - Licuri (coquilho)</option>
+                    <option value="8.6">8.6 - Murumuru</option>
+                    <option value="8.7">8.7 - Oiticica (semente)</option>
+                    <option value="8.8">8.8 - Pequi (amêndoa)</option>
+                    <option value="8.9">8.9 - Tucum (amêndoa)</option>
+                    <option value="8.10">8.10 - Outros</option>
+
+                    <option value="9.1">9.1 - Pinheiro brasileiro (nó de pinho)</option>
+                    <option value="9.2">9.2 - Pinheiro brasileiro (árvores abatidas)</option>
+                    <option value="9.3">9.3 - Pinheiro brasileiro (madeira em tora)</option>
+
+                    <option value="10">10 - Tanantes</option>
+                    <option value="10.1">10.1 - Angico (casca)</option>
+                    <option value="10.2">10.2 - Barbatimão (casca)</option>
+                    <option value="10.3">10.3 - Outros</option>
+            </select>
+
+
+            <label>Ano</label>
+            <select>
+                <option>Selecione o ano</option>
+                <option>Todos os anos</option>
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+                <option>2015</option>
+                <option>2014</option>
+                <option>2013</option>
+                <option>2012</option>
+                <option>2011</option>
+                <option>2010</option>
+                <option>2009</option>
+                <option>2008</option>
+                <option>2007</option>
+                <option>2006</option>
+                <option>2005</option>
+                <option>2004</option>
+                <option>2003</option>
+                <option>2002</option>
+                <option>2001</option>
+                <option>2000</option>
+                <option>1999</option>
+                <option>1998</option>
+                <option>1997</option>
+                <option>1996</option>
+                <option>1995</option>
+                <option>1994</option>
+                <option>1993</option>
+                <option>1992</option>
+                <option>1991</option>
+                <option>1990</option>
+                <option>1989</option>
+                <option>1988</option>
+                <option>1987</option>
+                <option>1986</option>
+            </select>
+
+
+
+            <label for="territorio">Nível territorial</label>
+            <select id="territorio" name="territorio">
+                <option value="">Selecione o nível territorial</option>
+                <option value="BR">Brasil (BR)</option>
+                <option value="GR">Grande Região (GR)</option>
+                <option value="UF">Unidade da Federação (UF)</option>
+                <option value="ME">Mesorregião Geográfica (ME)</option>
+                <option value="MI">Microrregião Geográfica (MI)</option>
+                <option value="MU">Município (MU)</option>
+            </select>
+
+            <label for="variavel">Variável</label>
+            <select id="variavel" name="variavel">
+                <option value="">Selecione a variável</option>
+
+                <option value="quantidade">
+                    Quantidade produzida na silvicultura
+                </option>
+
+                <option value="valor">
+                    Valor da produção da silvicultura
+                </option>
+            </select>
+
+            <button class="botao-consultar">Consultar</button>
+
+        </div>
+
+
+        <!-- FILTROS DA TABELA 3 -->
+        <div class="filtros tabela-filtros" id="filtros-tabela-3">
+
+            <h2>Filtros — Área</h2>
+
+            <label for="classificacao">Espécie florestal</label>
+            <select id="classificacao" name="classificacao">
+                <option value="">Selecione a espécie florestal</option>
+                <option value="total">Total</option>
+                <option value="acacia-negra">Acácia negra</option>
+                <option value="cedro-australiano">Cedro australiano</option>
+                <option value="eucalipto">Eucalipto</option>
+                <option value="mogno-africano">Mogno africano</option>
+                <option value="pinus">Pinus</option>
+                <option value="teca">Teca</option>
+                <option value="outras-especies">Outras espécies</option>
+            </select>
+
+            <label for="ano">Ano</label>
+            <select>
+                <option>Selecione o ano</option>
+                <option>Todos os anos</option>
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+                <option>2015</option>
+                <option>2014</option>
+                <option>2013</option>
+            </select>
+
+            <label for="territorio">Nível territorial</label>
+            <select id="territorio" name="territorio">
+                <option value="">Selecione o nível territorial</option>
+                <option value="BR">Brasil (BR)</option>
+                <option value="GR">Grande Região (GR)</option>
+                <option value="UF">Unidade da Federação (UF)</option>
+                <option value="ME">Mesorregião Geográfica (ME)</option>
+                <option value="MI">Microrregião Geográfica (MI)</option>
+                <option value="MU">Município (MU)</option>
+            </select>
+
+            <label for="variavel">Variável</label>
+            <select id="variavel" name="variavel">
+                <option value="">Selecione a variável</option>
+                <option value="quantidade">Área total existente em 31/12 dos efetivos da silvicultura</option>
+            </select>
+
+            <button class="botao-consultar">Consultar</button>
+
+        </div>
+
+    </div>
+<!-- área de infomação sobre cada tabela e seus respectivos filtros-->
+
+
+<section class="secao-resultados" id="resultados-pevs">
+
+    <div class="resultados-cabecalho">
+        <div class="resultados-titulo">
+            <span class="resultados-etiqueta">
+                <span class="ponto-status"></span>
+                PAINEL DE DADOS
+            </span>
+
+            <h2>Resultados da PEVS</h2>
+
+            <p>
+                Explore os dados da produção da extração vegetal
+                e da silvicultura no Brasil.
+            </p>
+        </div>
+
+        <div class="resultados-info">
+            <span class="material-symbols-outlined">database</span>
+
+            <div>
+                <strong>Base demonstrativa</strong>
+                <p>Dados ilustrativos para visualização</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- GRÁFICOS -->
+    <div class="graficos-resultados">
+
+        <!-- Gráfico principal -->
+        <article class="grafico-card grafico-principal">
+
+            <div class="grafico-cabecalho">
+                <div class="grafico-icone">
+                    <span class="material-symbols-outlined">bar_chart</span>
+                </div>
+
+                <div class="grafico-descricao">
+                    <h3>Evolução da produção</h3>
+                    <p>Quantidade produzida por ano</p>
+                </div>
+
+                <span class="grafico-tag">2019-2025</span>
+            </div>
+
+            <div class="canvas-grafico">
+                <canvas id="grafico-evolucao"></canvas>
+            </div>
+
+        </article>
+
+        <!-- Gráfico de distribuição -->
+        <article class="grafico-card grafico-secundario">
+
+            <div class="grafico-cabecalho">
+                <div class="grafico-icone">
+                    <span class="material-symbols-outlined">pie_chart</span>
+                </div>
+
+                <div class="grafico-descricao">
+                    <h3>Distribuição da produção</h3>
+                    <p>Participação por categoria</p>
+                </div>
+            </div>
+
+            <div class="canvas-grafico canvas-donut">
+                <canvas id="grafico-distribuicao"></canvas>
+            </div>
+
+            <div class="legenda-distribuicao">
+                <span><i class="legenda-madeira"></i> Madeira em tora</span>
+                <span><i class="legenda-carvao"></i> Carvão vegetal</span>
+                <span><i class="legenda-lenha"></i> Lenha</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- TABELA -->
+    <article class="tabela-resultados-card">
+
+        <div class="tabela-resultados-cabecalho">
+            <div class="titulo-tabela-resultados">
+                <span class="material-symbols-outlined">table_chart</span>
+
+                <div>
+                    <h3>Dados apresentados</h3>
+                    <p>Resumo dos valores usados nos gráficos</p>
+                </div>
+            </div>
+
+            <section id="botoes-exportar">
+
+            <button type="button" class="botao-exportar" id="exportar-resultados">
+                <span class="material-symbols-outlined">download</span>
+                Exportar CSV
+            </button>
+
+            <button type="button" class="botao-exportar" id="exportar-pdf">
+                <span class="material-symbols-outlined">download</span>
+                Exportar PDF
+            </button>
+
+            </section>
+        </div>
+
+        <div class="tabela-scroll">
+            <table id="tabela-resultados">
+                <thead>
+                    <tr>
+                        <th>Ano</th>
+                        <th>Categoria</th>
+                        <th>Quantidade produzida</th>
+                        <th>Valor da produção (R$)</th>
+                    </tr>
+                </thead>
+
+                <tbody id="corpo-resultados">
+                    <!-- Preenchido pelo JavaScript demonstrativo -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rodape-resultados">
+            <span id="total-resultados">7 registros</span>
+            <span>Valores ilustrativos</span>
+        </div>
+
+    </article>
+
+</section>
+
+
+
+<!-- SEÇÃO COM OS JAVA SCRIPTS-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="consultar.js"></script>
+<script src="graficos.js"></script>
+
+    
+</body>
+</html>

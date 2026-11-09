@@ -1,0 +1,54 @@
+@import url('/assets/variaveis/cores.css');
+@import url('/assets/fontes/fontes.css');
+
+
+.cabecalho {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.cabecalho img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Escurecer a imagem */
+.cabecalho::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.texto-cabecalho {
+    position: absolute;
+    z-index: 2;
+
+    left: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: var(--branco);
+    max-width: 650px;
+}
+
+.texto-cabecalho h1 {
+    font-family: var(--titulo1);
+    letter-spacing: 1px;
+    margin: 0 0 15px;
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.texto-cabecalho p {
+    margin: 0;
+    font-family: var(--texto);
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
